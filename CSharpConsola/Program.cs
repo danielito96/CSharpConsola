@@ -6,7 +6,18 @@ namespace CSharpConsola
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
+            int numeroUno = int.Parse(Console.ReadLine());
+            int numeroDos = int.Parse(Console.ReadLine());
+            int resultado = Suma(numeroUno,numeroDos);
+            Console.WriteLine("Resultado: " + resultado);
+        }
+
+        static int Suma(int num1, int num2){
+
+            return num1 + num2;
         }
     }
+
+
 }
