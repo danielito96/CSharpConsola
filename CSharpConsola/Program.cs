@@ -8,10 +8,30 @@ namespace CSharpConsola
         {
 
             CuentaBancaria cuentaUno = new CuentaBancaria();
-            cuentaUno.Balance = 2000;
-            Console.WriteLine("Balance: " + cuentaUno.Balance);
+            cuentaUno.Balance = 1000;
+
+            CuentaBancariaKids cuentaDos = new CuentaBancariaKids();
+            cuentaDos.Balance = 500;
+
+            AgregarBalance(cuentaUno, 2500);
+            AgregarBalance(cuentaUno, 1500);
+            AgregarBalance(cuentaDos, 1000);
+            AgregarBalance(cuentaDos, 1500);
+
+
+           
         }
 
+        static void AgregarBalance(ICuentaBancaria cuentaBancaria, double balance)
+        {
+            cuentaBancaria.agregarABalance(balance);
+            if(balance < 2000){
+                Console.WriteLine("Balance cuentaKids: " + cuentaBancaria.Balance);
+            }
+            else{
+                Console.WriteLine("Balance cuenta: " + cuentaBancaria.Balance);
+            }
+        }
 
     }
 
