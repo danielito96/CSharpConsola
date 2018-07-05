@@ -6,18 +6,48 @@ namespace CSharpConsola
     {
         static void Main(string[] args)
         {
-            
-            int numeroUno = int.Parse(Console.ReadLine());
-            int numeroDos = int.Parse(Console.ReadLine());
-            int resultado = Suma(numeroUno,numeroDos);
-            Console.WriteLine("Resultado: " + resultado);
+
+            CuentaBancaria cuentaUno = new CuentaBancaria();
+            cuentaUno.Balance = 2000;
+            Console.WriteLine("Balance: " + cuentaUno.Balance);
         }
 
-        static int Suma(int num1, int num2){
+
+    }
+
+    class Matematicas{
+
+        public static int Suma(int num1, int num2)
+        {
 
             return num1 + num2;
         }
+
+        public static int Resta(int num1, int num2)
+        {
+
+            return num1 - num2;
+        }
+
+        public static int Multiplicacion(int num1, int num2)
+        {
+
+            return num1 * num2;
+        }
+
+        public static int Division(int num1, int num2)
+        {
+
+            return num1 / num2;
+        }
     }
 
+    class Geometria : Matematicas
+    {
+        public static int AreaCuadrado(int lado){
+
+            return Multiplicacion(lado, lado);
+        }   
+    }
 
 }
