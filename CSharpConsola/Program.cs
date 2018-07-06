@@ -7,16 +7,7 @@ namespace CSharpConsola
         static void Main(string[] args)
         {
 
-            CuentaBancaria cuentaUno = new CuentaBancaria();
-            cuentaUno.Balance = 1000;
-
-            CuentaBancariaKids cuentaDos = new CuentaBancariaKids();
-            cuentaDos.Balance = 500;
-
-            AgregarBalance(cuentaUno, 2500);
-            AgregarBalance(cuentaUno, 1500);
-            AgregarBalance(cuentaDos, 1000);
-            AgregarBalance(cuentaDos, 1500);
+            Matematicas.Suma();
 
 
            
@@ -25,12 +16,9 @@ namespace CSharpConsola
         static void AgregarBalance(ICuentaBancaria cuentaBancaria, double balance)
         {
             cuentaBancaria.agregarABalance(balance);
-            if(balance < 2000){
-                Console.WriteLine("Balance cuentaKids: " + cuentaBancaria.Balance);
-            }
-            else{
+
                 Console.WriteLine("Balance cuenta: " + cuentaBancaria.Balance);
-            }
+
         }
 
     }
@@ -41,6 +29,16 @@ namespace CSharpConsola
         {
 
             return num1 + num2;
+        }
+
+        public static int Suma(int[] valores)
+        {
+            int resultado = 0;
+            foreach(int i in valores)
+            {
+                resultado += i;
+            }
+            return resultado;
         }
 
         public static int Resta(int num1, int num2)
