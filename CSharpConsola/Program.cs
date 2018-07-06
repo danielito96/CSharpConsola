@@ -7,7 +7,9 @@ namespace CSharpConsola
         static void Main(string[] args)
         {
 
-            Matematicas.Suma();
+            Matematicas.Suma(12,12);
+            Console.ReadLine();
+                            
 
 
            
@@ -41,7 +43,7 @@ namespace CSharpConsola
             return resultado;
         }
 
-        public static int Resta(int num1, int num2)
+        public virtual int Resta(int num1, int num2)
         {
 
             return num1 - num2;
@@ -66,6 +68,7 @@ namespace CSharpConsola
 
             return Multiplicacion(lado, lado);
         }   
+
     }
 
 }
