@@ -64,10 +64,16 @@ namespace CSharpConsola
 
     class Geometria : Matematicas
     {
-        public static int AreaCuadrado(int lado){
+        public static int AreaCuadrado(int lado)
+        {
 
             return Multiplicacion(lado, lado);
-        }   
+        }
+
+        public override int Resta(int num1, int num2)
+        {
+            return num2 - num1;
+        }
 
     }
 
